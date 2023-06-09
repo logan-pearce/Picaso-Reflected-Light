@@ -1,0 +1,11 @@
+opa_file,wave_range,calculation,R,fsed,kzz,mmw,condensates,virga_mieff,output_dir
+/data2/picaso_dbs/R60000/all_opacities_0.3_2_R60000.db,"[0.4, 2.0]",Reflected,2000,0.1,1000000000.0,2.2,virga recommend,/data/virga,/data2/lpearce/ReflectXGasGiantModelGrid/cloudy
+/data2/picaso_dbs/R60000/all_opacities_0.3_2_R60000.db,"[0.4, 2.0]",Reflected,2000,0.1,100000000000.0,2.2,virga recommend,/data/virga,/data2/lpearce/ReflectXGasGiantModelGrid/cloudy
+/data2/picaso_dbs/R60000/all_opacities_0.3_2_R60000.db,"[0.4, 2.0]",Reflected,2000,0.5,1000000000.0,2.2,virga recommend,/data/virga,/data2/lpearce/ReflectXGasGiantModelGrid/cloudy
+/data2/picaso_dbs/R60000/all_opacities_0.3_2_R60000.db,"[0.4, 2.0]",Reflected,2000,0.5,100000000000.0,2.2,virga recommend,/data/virga,/data2/lpearce/ReflectXGasGiantModelGrid/cloudy
+/data2/picaso_dbs/R60000/all_opacities_0.3_2_R60000.db,"[0.4, 2.0]",Reflected,2000,1.0,1000000000.0,2.2,virga recommend,/data/virga,/data2/lpearce/ReflectXGasGiantModelGrid/cloudy
+/data2/picaso_dbs/R60000/all_opacities_0.3_2_R60000.db,"[0.4, 2.0]",Reflected,2000,1.0,100000000000.0,2.2,virga recommend,/data/virga,/data2/lpearce/ReflectXGasGiantModelGrid/cloudy
+/data2/picaso_dbs/R60000/all_opacities_0.3_2_R60000.db,"[0.4, 2.0]",Reflected,2000,3.0,1000000000.0,2.2,virga recommend,/data/virga,/data2/lpearce/ReflectXGasGiantModelGrid/cloudy
+/data2/picaso_dbs/R60000/all_opacities_0.3_2_R60000.db,"[0.4, 2.0]",Reflected,2000,3.0,100000000000.0,2.2,virga recommend,/data/virga,/data2/lpearce/ReflectXGasGiantModelGrid/cloudy
+/data2/picaso_dbs/R60000/all_opacities_0.3_2_R60000.db,"[0.4, 2.0]",Reflected,2000,6.0,1000000000.0,2.2,virga recommend,/data/virga,/data2/lpearce/ReflectXGasGiantModelGrid/cloudy
+/data2/picaso_dbs/R60000/all_opacities_0.3_2_R60000.db,"[0.4, 2.0]",Reflected,2000,6.0,100000000000.0,2.2,virga recommend,/data/virga,/data2/lpearce/ReflectXGasGiantModelGrid/cloudy
