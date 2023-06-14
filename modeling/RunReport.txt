@@ -1,1 +1,0 @@
-ReflectXGasGiantModelGrid-Neptune-Tstar3000-Rstar0.2-Teq187.1302769665348-sep0.1-rad0.35-mass0.05-mh100-co0.5-phase0  converged 
