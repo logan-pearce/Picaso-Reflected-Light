@@ -4,6 +4,12 @@ from myastrotools.tijuca import *
 import astropy.units as u
 import pandas as pandas
 
+import numpy as np
+#from tools.tools import *
+from myastrotools.tijuca import *
+import astropy.units as u
+import pandas as pandas
+
 def Run1Model(p, num_tangle = 6, num_gangle = 6):
 
     grid = p['name']
@@ -86,17 +92,7 @@ def Run1Model(p, num_tangle = 6, num_gangle = 6):
                             specdict = spectrum_setup,
                             savefiledirectory = savefiledirectory
                  )
-    return savefiledirectory, cj
-
-def RunGrid(sheet_id='11u2eirdZcWZdjnKFn3vzqbCtKCodstP-KnoGXC5FdR8', 
-             sheet_name='GasGiantsBaseModels'):
     import time
-    url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&gid={sheet_name}"
-    k = open('ReflectXGasGiantRunReport.txt','w')
-    k.close()
-    p = pd.read_csv(url)
-    p = p.dropna(axis=1, how='all')
-    savefiledirectory, cj = Run1Model(p.loc[0])
     with open(savefiledirectory+'/terminal_output.txt','r') as f:
         z = f.read()
         k = open('ReflectXGasGiantRunReport.txt','a')
@@ -108,7 +104,29 @@ def RunGrid(sheet_id='11u2eirdZcWZdjnKFn3vzqbCtKCodstP-KnoGXC5FdR8',
             k.write(savefiledirectory + ' ' +outtime + '  FAILED \n')
         k.close()
         
+    return savefiledirectory, cj
+
+def GetP(sheet_id='11u2eirdZcWZdjnKFn3vzqbCtKCodstP-KnoGXC5FdR8', 
+             sheet_name='GasGiantsBaseModels'):
+    url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&gid={sheet_name}"
+    p = pd.read_csv(url)
+    p = p.dropna(axis=1, how='all')
     return p
 
 
-p = RunGrid()
+def RunGrid(sheet_id='11u2eirdZcWZdjnKFn3vzqbCtKCodstP-KnoGXC5FdR8', 
+             sheet_name='GasGiantsBaseModels', n_jobs = 3):
+    k = open('ReflectXGasGiantRunReport.txt','w')
+    k.close()
+    p = GetP(sheet_id=sheet_id, 
+             sheet_name=sheet_name)
+    p = p.loc[:5]
+    #savefiledirectory, cj = Run1Model(p.loc[0])
+    import picaso.justdoit as jdi
+    jdi.Parallel(n_jobs=n_jobs)(jdi.delayed(Run1Model)(p.loc[i]) for i in range(len(p)))
+        
+    #return p
+
+
+
+RunGrid()

@@ -1,0 +1,6 @@
+ReflectXGasGiantModelGrid-Neptune-Tstar3000-Rstar0.2-Teq187.0-sep0.1-rad0.35-mass0.05-mh100-co0.5-phase0 2023-6-14-15:17:31  converged 
+ReflectXGasGiantModelGrid-Neptune-Tstar3000-Rstar0.2-Teq187.0-sep0.1-rad0.35-mass0.05-mh100-co1.5-phase0 2023-6-14-15:17:31  converged 
+ReflectXGasGiantModelGrid-Neptune-Tstar3000-Rstar0.2-Teq187.0-sep0.1-rad0.35-mass0.05-mh100-co0.5-phase45 2023-6-14-15:17:52  converged 
+ReflectXGasGiantModelGrid-Neptune-Tstar3000-Rstar0.2-Teq187.0-sep0.1-rad0.35-mass0.05-mh100-co1.5-phase45 2023-6-14-15:39:16  converged 
+ReflectXGasGiantModelGrid-Neptune-Tstar3000-Rstar0.2-Teq187.0-sep0.1-rad0.35-mass0.05-mh100-co1.5-phase90 2023-6-14-15:39:16  converged 
+ReflectXGasGiantModelGrid-Neptune-Tstar3000-Rstar0.2-Teq187.0-sep0.1-rad0.35-mass0.05-mh100-co0.5-phase90 2023-6-14-15:39:17  converged 
