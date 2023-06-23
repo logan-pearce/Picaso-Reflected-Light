@@ -1,12 +1,6 @@
 import numpy as np
 #from tools.tools import *
-from myastrotools.tijuca import *
-import astropy.units as u
-import pandas as pandas
-
-import numpy as np
-#from tools.tools import *
-from myastrotools.tijuca import *
+from myastrotools.reflectx import *
 import astropy.units as u
 import pandas as pandas
 
@@ -31,9 +25,9 @@ def Run1Model(p, num_tangle = 6, num_gangle = 6):
 
 
     ## Climate:
-    nlevel = p['nlevel'] # number of plane-parallel levels in your code
-    nofczns = p['nofczns'] # number of convective zones initially. Let's not play with this for now.
-    nstr_upper = p['nstr_upper'] # top most level of guessed convective zone
+    nlevel = int(p['nlevel']) # number of plane-parallel levels in your code
+    nofczns = int(p['nofczns']) # number of convective zones initially. Let's not play with this for now.
+    nstr_upper = int(p['nstr_upper']) # top most level of guessed convective zone
     nstr_deep = nlevel -2 # this is always the case. Dont change this
     nstr = np.array([0,nstr_upper,nstr_deep,0,0,0]) # initial guess of convective zones
     rfacv = p['rfacv']
@@ -44,7 +38,7 @@ def Run1Model(p, num_tangle = 6, num_gangle = 6):
     planet_mh_CtoO = p['cto']
 
     Teq_str = np.round(Teq, decimals=0)
-    directory = f'{grid}-{planettype}-Tstar{T_star}-Rstar{r_star}-Teq{Teq_str}-sep{semi_major}-rad{radius}-mass{massj}-mh{planet_mh}-co{planet_mh_CtoO}-phase{phase}'
+    directory = f'{grid}-{planettype}-Tstar{int(T_star)}-Rstar{r_star}-Teq{int(Teq_str)}-sep{semi_major}-rad{radius}-mass{massj}-mh{int(planet_mh)}-co{planet_mh_CtoO}-phase{int(phase)}'
     #savefiledirectory = p['output_dir']+directory
     output_dir = ''
     savefiledirectory = output_dir+directory
@@ -66,8 +60,8 @@ def Run1Model(p, num_tangle = 6, num_gangle = 6):
         'Teff':T_star, 'logg':logg, 'mh':metal, 'radius':r_star
     }
 
-    climate_run_setup = {'climate_pbottom':p['p_bottom'],
-            'climate_ptop':p['p_top'],
+    climate_run_setup = {'climate_pbottom':int(p['p_bottom']),
+            'climate_ptop':int(p['p_top']),
             'nlevel':nlevel, 'nofczns':nofczns, 'nstr_upper':nstr_upper,
             'nstr_deep':nstr_deep, 'rfacv':rfacv
     }
@@ -106,11 +100,18 @@ def Run1Model(p, num_tangle = 6, num_gangle = 6):
         
     return savefiledirectory, cj
 
+
 def GetP(sheet_id='11u2eirdZcWZdjnKFn3vzqbCtKCodstP-KnoGXC5FdR8', 
              sheet_name='GasGiantsBaseModels'):
     url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&gid={sheet_name}"
     p = pd.read_csv(url)
     p = p.dropna(axis=1, how='all')
+    for i in range(len(p)):
+        try:
+            if np.isnan(p[p.columns[0]][0]):
+                p = p.drop(i, axis=0)
+        except TypeError:
+            pass
     return p
 
 
@@ -120,8 +121,7 @@ def RunGrid(sheet_id='11u2eirdZcWZdjnKFn3vzqbCtKCodstP-KnoGXC5FdR8',
     k.close()
     p = GetP(sheet_id=sheet_id, 
              sheet_name=sheet_name)
-    p = p.loc[:5]
-    #savefiledirectory, cj = Run1Model(p.loc[0])
+    p = p.loc[:0]
     import picaso.justdoit as jdi
     jdi.Parallel(n_jobs=n_jobs)(jdi.delayed(Run1Model)(p.loc[i]) for i in range(len(p)))
         

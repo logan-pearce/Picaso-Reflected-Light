@@ -1,6 +1,6 @@
 import numpy as np
 #from tools.tools import *
-from myastrotools.tijuca import *
+from myastrotools.reflectx import *
 import astropy.units as u
 import pandas as pandas
 
@@ -46,8 +46,9 @@ def Run1CloudyModel(OneCloudp, OneBaseModelp):
     
     fsed = OneCloudp['fsed']
     logkzz = np.log10(OneCloudp['kzz'])
-    cloud_filename_prefix = f'cloudy-models/cloudy-fsed{fsed}-kzz{int(logkzz)}'
-    os.system('mkdir '+savefiledirectory+'/cloudy-models/')
+    #cloud_filename_prefix = f'cloudy-models/cloudy-fsed{fsed}-kzz{int(logkzz)}'
+    cloud_filename_prefix = f'cloudy-fsed{fsed}-kzz{int(logkzz)}'
+    #os.system('mkdir '+savefiledirectory+'/cloudy-models/')
     
     
     ### Cloud setup:
