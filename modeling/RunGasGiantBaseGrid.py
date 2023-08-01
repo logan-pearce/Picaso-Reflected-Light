@@ -121,7 +121,7 @@ def RunGrid(sheet_id='11u2eirdZcWZdjnKFn3vzqbCtKCodstP-KnoGXC5FdR8',
     k.close()
     p = GetP(sheet_id=sheet_id, 
              sheet_name=sheet_name)
-    p = p.loc[:0]
+    p = p.loc[995]
     import picaso.justdoit as jdi
     jdi.Parallel(n_jobs=n_jobs)(jdi.delayed(Run1Model)(p.loc[i]) for i in range(len(p)))
         

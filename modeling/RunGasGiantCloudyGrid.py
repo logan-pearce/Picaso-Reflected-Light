@@ -1,5 +1,5 @@
 import numpy as np
-#from tools.tools import *
+#from tools.reflectx import *
 from myastrotools.reflectx import *
 import astropy.units as u
 import pandas as pandas
@@ -46,23 +46,24 @@ def Run1CloudyModel(OneCloudp, OneBaseModelp):
     
     fsed = OneCloudp['fsed']
     logkzz = np.log10(OneCloudp['kzz'])
-    #cloud_filename_prefix = f'cloudy-models/cloudy-fsed{fsed}-kzz{int(logkzz)}'
-    cloud_filename_prefix = f'cloudy-fsed{fsed}-kzz{int(logkzz)}'
-    #os.system('mkdir '+savefiledirectory+'/cloudy-models/')
+    cloud_filename_prefix = f'cloudy-models/cloudy-fsed{fsed}-kzz{int(logkzz)}'
+    #cloud_filename_prefix = f'cloudy-fsed{fsed}-kzz{int(logkzz)}'
+    os.system('mkdir '+savefiledirectory+'/cloudy-models/')
     
     
     ### Cloud setup:
     clouds_setup = {'kz':OneCloudp['kzz'], 
                     'fsed':OneCloudp['fsed'], 
                     'mean_mol_weight':OneCloudp['mmw'],
-                    'condensates':OneCloudp['condensates'], 
+                    #'condensates':OneCloudp['condensates'], 
+                    'condensates':['H2O', 'KCl'],
                     'virga_mieff':OneCloudp['virga_mieff']
                    }
     
     ## Spectrum setup
     opa_file = None
-    #opa_file = Cloudp['opa_file']
-    #R = Cloudp['R']
+    # opa_file = OneCloudp['opa_file']
+    # R = OneCloudp['R']
     R = 150
     wave_range = [float(OneCloudp['wave_range'].split(',')[0].replace('[','')),
               float(OneCloudp['wave_range'].split(',')[1].replace(' ','').replace(']',''))]
@@ -77,22 +78,34 @@ def Run1CloudyModel(OneCloudp, OneBaseModelp):
                                                  spectrum_setup,
                                                  cloud_filename_prefix,
                                                  calculation = 'planet')
+    import time
+    k = open('ReflectXGasGiantCloudyRunReport.txt','a')
+    t = time.localtime()
+    outtime = str(t.tm_year)+'-'+str(t.tm_mon)+'-'+str(t.tm_mday)+'-'+str(t.tm_hour)+':'+str(t.tm_min)+':'+str(t.tm_sec)
+    if clouds == 'NH3 in mols':
+        k.write(savefiledirectory + cloud_filename_prefix + ' ' +outtime + '  Passed due to NH3 \n')
+    else:
+        k.write(savefiledirectory + cloud_filename_prefix + ' ' +outtime + '  completed \n')
+    k.close()
 
 
 def RunGrid(sheet_id='11u2eirdZcWZdjnKFn3vzqbCtKCodstP-KnoGXC5FdR8', 
-             sheet_name='378514385', n_jobs = 3):
-    k = open('ReflectXGasGiantRunReport.txt','a')
-    k.write('\n ############################### \n')
+             sheet_name='378514385', n_jobs = 25):
+    k = open('ReflectXGasGiantCloudyRunReport.txt','a')
+    #k.write('\n ############################### \n')
     k.close()
 
     CloudyP = GetP(sheet_id=sheet_id, sheet_name='378514385')
     BaseModelP = GetP(sheet_id=sheet_id, sheet_name='0')
+
+    j = 36
+    i = 0
+    Run1CloudyModel(CloudyP.loc[i], BaseModelP.loc[j])
     
-    import picaso.justdoit as jdi
-    #for j in range(len(BaseModelP)):
-    for j in range(1):
-        jdi.Parallel(n_jobs=n_jobs)(jdi.delayed(Run1CloudyModel)(CloudyP.loc[i], BaseModelP.loc[j]) 
-                                    for i in range(3))#range(len(CloudyP)))
+    # import picaso.justdoit as jdi
+    # #for j in range(len(BaseModelP)):
+    # for j in range(1):
+    #     jdi.Parallel(n_jobs=n_jobs)(jdi.delayed(Run1CloudyModel)(CloudyP.loc[i], BaseModelP.loc[j]) 
+    #                                 for i in range(len(CloudyP)))
         
 RunGrid()
-        
