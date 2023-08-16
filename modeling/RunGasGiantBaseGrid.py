@@ -1,8 +1,8 @@
 import numpy as np
 #from tools.tools import *
-from myastrotools.reflectx import *
+from tools.reflectx import *
 import astropy.units as u
-import pandas as pandas
+import pandas as pd
 
 def Run1Model(p, num_tangle = 6, num_gangle = 6):
 
@@ -39,17 +39,40 @@ def Run1Model(p, num_tangle = 6, num_gangle = 6):
 
     Teq_str = np.round(Teq, decimals=0)
     directory = f'{grid}-{planettype}-Tstar{int(T_star)}-Rstar{r_star}-Teq{int(Teq_str)}-sep{semi_major}-rad{radius}-mass{massj}-mh{int(planet_mh)}-co{planet_mh_CtoO}-phase{int(phase)}'
-    #savefiledirectory = p['output_dir']+directory
-    output_dir = ''
-    savefiledirectory = output_dir+directory
+    savefiledirectory = p['output_dir']+directory
+    #output_dir = ''
+    #savefiledirectory = output_dir+directory
 
-    local_ck_path = f'/Volumes/Oy/picaso/reference/kcoeff_2020/'
-    #local_ck_path = p['local_ck_path']
+    # Skip ones already completed:
+    try:
+        with open('ReflectXGasGiantRunReport.txt','a') as f:
+            z = f.read().splitlines()
+        for zz in z:
+            if directory in zz:
+                return
+    except:
+        pass
+
+
+    import os
+    # Make directory to store run results:
+    os.system('mkdir '+savefiledirectory)
+
+    import time
+    k = open(savefiledirectory+'/RunReport.txt','w')
+    t = time.localtime()
+    outtime = str(t.tm_year)+'-'+str(t.tm_mon)+'-'+str(t.tm_mday)+'-'+str(t.tm_hour)+':'+str(t.tm_min)+':'+str(t.tm_sec)
+    k.write('Starting ' +outtime + '\n')
+    k.close()
+
+
+    #local_ck_path = f'/Volumes/Oy/picaso/reference/kcoeff_2020/'
+    local_ck_path = p['local_ck_path']
 
     planet_properties = {
         'tint':Tint, 'Teq':Teq, 'radius':radius, 'radius_unit':u.Rjup,
-         'mass':massj, 'mass_unit': u.Mjup,
-         'gravity': None, 'gravity_unit':None,
+        'mass':massj, 'mass_unit': u.Mjup,
+        'gravity': None, 'gravity_unit':None,
         'semi_major':semi_major, 'semi_major_unit': u.AU,
         'mh': planet_mh, 'CtoO':planet_mh_CtoO, 'phase':phase, 'num_tangle':num_tangle,
         'num_gangle':num_gangle, 'noTiOVO':p['noTiOVO'], 'planet_mh_str':p['mh_str'],
@@ -65,40 +88,65 @@ def Run1Model(p, num_tangle = 6, num_gangle = 6):
             'nlevel':nlevel, 'nofczns':nofczns, 'nstr_upper':nstr_upper,
             'nstr_deep':nstr_deep, 'rfacv':rfacv
     }
-    #opa_file = p['opa_file']
-    opa_file = None
+    opa_file = p['opa_file']
+    #opa_file = None
+    #R = 150
+    R = p['R']
     wave_range = [float(p['wave_range'].split(',')[0].replace('[','')),
-              float(p['wave_range'].split(',')[1].replace(' ','').replace(']',''))]
+            float(p['wave_range'].split(',')[1].replace(' ','').replace(']',''))]
     spectrum_setup = {'opacity_db':opa_file,
-                      'wave_range':wave_range,
-                      'calculation':'reflected', 'R':150
-                     }
+                    'wave_range':wave_range,
+                    'calculation':'reflected', 'R':R
+                    }
 
     if p['guess'] == 'guillot':
         use_guillotpt = True
-
-
-    cj = MakeModelCloudFreePlanet(planet_properties, 
-                            star_properties,
-                            use_guillotpt = True,
-                            cdict = climate_run_setup,
-                            compute_spectrum = True,
-                            specdict = spectrum_setup,
-                            savefiledirectory = savefiledirectory
-                 )
+    
     import time
-    with open(savefiledirectory+'/terminal_output.txt','r') as f:
-        z = f.read()
-        k = open('ReflectXGasGiantRunReport.txt','a')
+    k = open(savefiledirectory+'/RunReport.txt','a')
+    t = time.localtime()
+    outtime = str(t.tm_year)+'-'+str(t.tm_mon)+'-'+str(t.tm_mday)+'-'+str(t.tm_hour)+':'+str(t.tm_min)+':'+str(t.tm_sec)
+    k.write('Started climate run' +outtime + '\n')
+    k.close()
+
+    try:
+        cj = MakeModelCloudFreePlanet(planet_properties, 
+                                star_properties,
+                                cdict = climate_run_setup,
+                                use_guillotpt = use_guillotpt,
+                                compute_spectrum = True,
+                                specdict = spectrum_setup,
+                                savefiledirectory = savefiledirectory
+                    )
+        k = open(savefiledirectory+'/RunReport.txt','a')
         t = time.localtime()
         outtime = str(t.tm_year)+'-'+str(t.tm_mon)+'-'+str(t.tm_mday)+'-'+str(t.tm_hour)+':'+str(t.tm_min)+':'+str(t.tm_sec)
-        if 'YAY ! ENDING WITH CONVERGENCE' in z:
-            k.write(savefiledirectory + ' ' +outtime + '  converged \n')
-        else:
-            k.write(savefiledirectory + ' ' +outtime + '  FAILED \n')
+        k.write('Finished ' +outtime)
         k.close()
         
-    return savefiledirectory, cj
+        with open(savefiledirectory+'/terminal_output.txt','r') as f:
+            z = f.read()
+            k = open('ReflectXGasGiantRunReport.txt','a')
+            t = time.localtime()
+            outtime = str(t.tm_year)+'-'+str(t.tm_mon)+'-'+str(t.tm_mday)+'-'+str(t.tm_hour)+':'+str(t.tm_min)+':'+str(t.tm_sec)
+            if 'YAY ! ENDING WITH CONVERGENCE' in z:
+                k.write(savefiledirectory + ' ' +outtime + '  converged  no error \n')
+            else:
+                k.write(savefiledirectory + ' ' +outtime + '  FAILED  failed to converge \n')
+            k.close()
+
+    except Exception as e:
+        k = open('ReflectXGasGiantRunReport.txt','a')
+        k.write(savefiledirectory + ' ' +outtime + '  FAILED ' +str(e)+' \n')
+        k.close()
+
+        k = open(savefiledirectory+'/RunReport.txt','a')
+        t = time.localtime()
+        outtime = str(t.tm_year)+'-'+str(t.tm_mon)+'-'+str(t.tm_mday)+'-'+str(t.tm_hour)+':'+str(t.tm_min)+':'+str(t.tm_sec)
+        k.write('Finished ' + outtime + 'with error '+str(e))
+        k.close()
+        
+    return 
 
 
 def GetP(sheet_id='11u2eirdZcWZdjnKFn3vzqbCtKCodstP-KnoGXC5FdR8', 
@@ -116,12 +164,12 @@ def GetP(sheet_id='11u2eirdZcWZdjnKFn3vzqbCtKCodstP-KnoGXC5FdR8',
 
 
 def RunGrid(sheet_id='11u2eirdZcWZdjnKFn3vzqbCtKCodstP-KnoGXC5FdR8', 
-             sheet_name='GasGiantsBaseModels', n_jobs = 3):
-    k = open('ReflectXGasGiantRunReport.txt','w')
+             sheet_name='GasGiantsBaseModels', n_jobs = 30):
+    k = open('ReflectXGasGiantRunReport.txt','a')
     k.close()
     p = GetP(sheet_id=sheet_id, 
              sheet_name=sheet_name)
-    p = p.loc[995]
+    #p = p.loc[:0]
     import picaso.justdoit as jdi
     jdi.Parallel(n_jobs=n_jobs)(jdi.delayed(Run1Model)(p.loc[i]) for i in range(len(p)))
         
