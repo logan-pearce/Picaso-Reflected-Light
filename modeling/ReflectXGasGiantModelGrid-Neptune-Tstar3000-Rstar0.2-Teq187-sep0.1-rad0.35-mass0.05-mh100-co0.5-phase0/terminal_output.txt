@@ -1,262 +1,259 @@
 /Volumes/Oy/picaso/reference/kcoeff_2020/sonora_2020_feh+200_co_050_noTiOVO.data.196
 NOTE: You are loading Opacity tables without any Gaseous TiO and VO opacities
 starting climate run
-Iteration number  0 , min , max temp  165.43192499428577 794.3210148857679 , flux balance  0.9835032311193999
-Iteration number  1 , min , max temp  174.1017265172362 1319.513196264218 , flux balance  0.9728555007737765
-Iteration number  2 , min , max temp  182.76695540062408 1383.7788518430934 , flux balance  0.9731266917624525
-Iteration number  3 , min , max temp  192.93260386901184 1471.4524671950428 , flux balance  1.0616914402046747
-Iteration number  4 , min , max temp  183.87593396507114 1597.8915981994346 , flux balance  2.0577448116438632
-Iteration number  5 , min , max temp  178.58470004739144 1565.476778207496 , flux balance  0.11679212635061693
-Iteration number  6 , min , max temp  178.35760191630573 1560.943262802015 , flux balance  0.0008834911958308482
-Iteration number  7 , min , max temp  178.35685022501252 1560.8613373010355 , flux balance  7.073944876091948e-07
+Iteration number  0 , min , max temp  165.40104248716597 794.3759906666357 , flux balance  0.8083509865907
+Iteration number  1 , min , max temp  174.0914919726627 1337.5655073327416 , flux balance  0.8076239161473657
+Iteration number  2 , min , max temp  182.7002575956428 1395.5262065266593 , flux balance  0.826037265853339
+Iteration number  3 , min , max temp  192.6626025148658 1476.0533962834033 , flux balance  0.9433217807775734
+Iteration number  4 , min , max temp  183.50716459939514 1604.0552938401313 , flux balance  2.1343925924431155
+Iteration number  5 , min , max temp  178.20817293480832 1571.0603959947753 , flux balance  0.12577406453493395
+Iteration number  6 , min , max temp  177.9676232270539 1566.375815543068 , flux balance  0.001039725546690666
+Iteration number  7 , min , max temp  177.96672852516093 1566.2899596135385 , flux balance  9.003298390045531e-07
 In t_start: Converged Solution in iterations  7
-Big iteration is  178.35685022501252 0
-Iteration number  0 , min , max temp  179.78420416323908 1592.4805420357814 , flux balance  3.313954328083426
-Iteration number  1 , min , max temp  181.7153228531044 1821.1138893240627 , flux balance  0.6309364265050839
-Iteration number  2 , min , max temp  180.0255099052872 1758.2878382469332 , flux balance  0.05646240934330935
-Iteration number  3 , min , max temp  179.89583950320824 1748.539500826963 , flux balance  0.0025805262842666637
-Iteration number  4 , min , max temp  179.88947500488916 1748.366202132915 , flux balance  2.1824128915399866e-05
+Big iteration is  177.96672852516093 0
+Iteration number  0 , min , max temp  179.3456096032563 1598.4324822435647 , flux balance  3.2780577498623766
+Iteration number  1 , min , max temp  181.41597906539545 1832.133370321115 , flux balance  0.6266280364737369
+Iteration number  2 , min , max temp  179.9401279477234 1767.5375635799824 , flux balance  0.058165497760712295
+Iteration number  3 , min , max temp  179.79729171787795 1757.3009114680103 , flux balance  0.002767754046315469
+Iteration number  4 , min , max temp  179.79020135451353 1757.1080762683123 , flux balance  2.47316431875666e-05
 In t_start: Converged Solution in iterations  4
-Big iteration is  179.88947500488916 1
-Iteration number  0 , min , max temp  182.28433032912758 1771.7008288157194 , flux balance  0.4373812197518289
-Iteration number  1 , min , max temp  182.38218102793198 1778.298244310915 , flux balance  0.03136961702680748
-Iteration number  2 , min , max temp  182.29178438298848 1778.2127622164437 , flux balance  0.000188076259291398
-Iteration number  3 , min , max temp  182.29121310297128 1778.2127166642963 , flux balance  3.2388976115314786e-08
+Big iteration is  179.79020135451353 1
+Iteration number  0 , min , max temp  182.08468993824758 1780.299042386796 , flux balance  0.4232142125302603
+Iteration number  1 , min , max temp  182.1709083478361 1786.889543759143 , flux balance  0.03121513971384577
+Iteration number  2 , min , max temp  182.07623332497758 1786.8051486328206 , flux balance  0.00019468812603901846
+Iteration number  3 , min , max temp  182.0756005040866 1786.8051041300128 , flux balance  3.556142814924803e-08
 In t_start: Converged Solution in iterations  3
-Big iteration is  182.29121310297128 2
-Iteration number  0 , min , max temp  182.44083630449796 1781.8706149874236 , flux balance  0.19296693714828234
-Iteration number  1 , min , max temp  181.8259668904196 1781.8453820506008 , flux balance  0.008444570151425461
-Iteration number  2 , min , max temp  181.79574359258612 1781.845394655024 , flux balance  2.9139818566844912e-05
+Big iteration is  182.0756005040866 2
+Iteration number  0 , min , max temp  182.06762532616355 1790.3883807071497 , flux balance  0.16211875670576237
+Iteration number  1 , min , max temp  181.55022582503972 1790.3645564412445 , flux balance  0.00517138764449968
+Iteration number  2 , min , max temp  181.53411695327804 1790.3645606759333 , flux balance  9.916398355160781e-06
 In t_start: Converged Solution in iterations  2
 Profile converged
-Iteration number  0 , min , max temp  183.11897356904566 1782.3513904135662 , flux balance  0.18492454415471749
-Iteration number  1 , min , max temp  182.17456046284363 1782.3515413357063 , flux balance  0.0062022142581375055
-Iteration number  2 , min , max temp  182.14066406166108 1782.3515596820876 , flux balance  1.3037224289870965e-05
+Iteration number  0 , min , max temp  183.07199847368423 1790.832740879717 , flux balance  0.21857682399183062
+Iteration number  1 , min , max temp  181.9712203737092 1790.8330524269636 , flux balance  0.009951021144371732
+Iteration number  2 , min , max temp  181.9156572979698 1790.8330811755693 , flux balance  3.42875125052165e-05
 In t_start: Converged Solution in iterations  2
-Big iteration is  182.14066406166108 0
-Iteration number  0 , min , max temp  181.85557999229061 1782.4472926898095 , flux balance  0.11448164651032014
-Iteration number  1 , min , max temp  181.6104423374686 1782.4475136411625 , flux balance  0.003978848241538797
-Iteration number  2 , min , max temp  181.60241585236338 1782.4475207716687 , flux balance  8.69282328041569e-06
+Big iteration is  181.9156572979698 0
+Iteration number  0 , min , max temp  181.73110553192998 1790.9386865577 , flux balance  0.08716452235949251
+Iteration number  1 , min , max temp  181.49313843699258 1790.9388570190804 , flux balance  0.0017314854377991475
+Iteration number  2 , min , max temp  181.4893752833412 1790.9388599626736 , flux balance  1.582940618773128e-06
 In t_start: Converged Solution in iterations  2
 Profile converged
  convection zone status
 0 85 89 0 0 0
 1
 [ 0 73 73 73 85 89]
-Iteration number  0 , min , max temp  182.2828499625812 1782.400032573887 , flux balance  0.1561351438392753
-Iteration number  1 , min , max temp  181.7933618600293 1782.4006443499904 , flux balance  0.007652668593717537
-Iteration number  2 , min , max temp  181.76529028669418 1782.400664708796 , flux balance  2.7553805190050823e-05
+Iteration number  0 , min , max temp  181.70862801688372 1790.900924869546 , flux balance  0.12991271663328863
+Iteration number  1 , min , max temp  181.376158329188 1790.9013887615542 , flux balance  0.005951899545641321
+Iteration number  2 , min , max temp  181.35853886448308 1790.9014022263932 , flux balance  1.8584806293706803e-05
 In t_start: Converged Solution in iterations  2
-Big iteration is  181.76529028669418 0
-Iteration number  0 , min , max temp  182.24019277591393 1782.3907731959898 , flux balance  0.057311135044295705
-Iteration number  1 , min , max temp  182.00057519136544 1782.3909756002522 , flux balance  0.0008939350425587907
-Iteration number  2 , min , max temp  181.9963515686039 1782.3909783058314 , flux balance  4.823609001423502e-07
+Big iteration is  181.35853886448308 0
+Iteration number  0 , min , max temp  181.92787037649992 1790.896511940657 , flux balance  0.07728713309115871
+Iteration number  1 , min , max temp  181.6310640946806 1790.8967440214512 , flux balance  0.0018638360067701133
+Iteration number  2 , min , max temp  181.62297402817592 1790.896749133925 , flux balance  1.868999468807948e-06
 In t_start: Converged Solution in iterations  2
 Profile converged
 Grow Phase : Upper Zone
 [ 0 72 73 73 85 89]
-Iteration number  0 , min , max temp  181.93793548626152 1781.7291966589858 , flux balance  0.024311289787940563
-Iteration number  1 , min , max temp  181.87146226870325 1781.72840737398 , flux balance  0.0001413932377803109
+Iteration number  0 , min , max temp  181.8581600537701 1790.2328045777776 , flux balance  0.02210081942791007
+Iteration number  1 , min , max temp  181.7716679631628 1790.2317840087005 , flux balance  0.00012705107011321288
 In t_start: Converged Solution in iterations  1
-Big iteration is  181.87146226870325 0
-Iteration number  0 , min , max temp  181.57027128706352 1781.6488437783382 , flux balance  0.0214376858802674
-Iteration number  1 , min , max temp  181.53825698970184 1781.6488802276835 , flux balance  0.00017257486163672924
+Big iteration is  181.7716679631628 0
+Iteration number  0 , min , max temp  181.6024399468281 1790.1314921423382 , flux balance  0.014006395982034068
+Iteration number  1 , min , max temp  181.5726494917406 1790.1315038163352 , flux balance  6.012696053394263e-05
 In t_start: Converged Solution in iterations  1
 Profile converged
 [ 0 71 73 73 85 89]
-Iteration number  0 , min , max temp  181.27796769092663 1780.8550461835214 , flux balance  0.020376037846951776
-Iteration number  1 , min , max temp  181.25073372125158 1780.8556320487694 , flux balance  0.00017246489208147856
+Iteration number  0 , min , max temp  181.3355372937094 1789.3169685796495 , flux balance  0.011631492103834452
+Iteration number  1 , min , max temp  181.3182907761427 1789.3170762929913 , flux balance  5.29899180331408e-05
 In t_start: Converged Solution in iterations  1
-Big iteration is  181.25073372125158 0
-Iteration number  0 , min , max temp  181.13949502659733 1780.7462493980795 , flux balance  0.01720961652027654
-Iteration number  1 , min , max temp  181.11411613099563 1780.746354722298 , flux balance  0.0001256740328282368
+Big iteration is  181.3182907761427 0
+Iteration number  0 , min , max temp  181.11218086169427 1789.248415287105 , flux balance  0.009743104158990504
+Iteration number  1 , min , max temp  181.09916425727897 1789.2485202304886 , flux balance  4.044028357805151e-05
 In t_start: Converged Solution in iterations  1
 Profile converged
 [ 0 70 73 73 85 89]
-Iteration number  0 , min , max temp  181.12451302063147 1779.8391743198006 , flux balance  0.012770043315442766
-Iteration number  1 , min , max temp  181.1026423404791 1779.8434515810216 , flux balance  6.849724186524655e-05
+Iteration number  0 , min , max temp  180.94022661878125 1788.345089717905 , flux balance  0.008836208906456039
+Iteration number  1 , min , max temp  180.92827217322176 1788.3485738906145 , flux balance  3.4712457319622136e-05
 In t_start: Converged Solution in iterations  1
-Big iteration is  181.1026423404791 0
-Iteration number  0 , min , max temp  181.1148983489453 1779.692386021217 , flux balance  0.004759528699164894
-Iteration number  1 , min , max temp  181.10557591141037 1779.692452513805 , flux balance  1.0830473505020357e-05
+Big iteration is  180.92827217322176 0
+Iteration number  0 , min , max temp  180.8403261071424 1788.2650877454573 , flux balance  0.006935297467779372
+Iteration number  1 , min , max temp  180.83049923641997 1788.2652329856082 , flux balance  2.2072580605062405e-05
 In t_start: Converged Solution in iterations  1
 Profile converged
 [ 0 69 73 73 85 89]
-Iteration number  0 , min , max temp  181.1148106510457 1778.7332867663833 , flux balance  0.0018087536901395997
-Iteration number  1 , min , max temp  181.1109683035289 1778.744974079354 , flux balance  2.7032434719735446e-06
-Iteration number  2 , min , max temp  181.11096063251392 1778.7453199341799 , flux balance  9.81046634783137e-10
+Iteration number  0 , min , max temp  180.79221425033785 1787.3066195749366 , flux balance  0.005323409083581576
+Iteration number  1 , min , max temp  180.783924585215 1787.3171663655432 , flux balance  1.39105602534469e-05
+Iteration number  2 , min , max temp  180.78389892559565 1787.3174733389787 , flux balance  4.577408201646529e-09
 In t_start: Converged Solution in iterations  2
-Big iteration is  181.11096063251392 0
-Iteration number  0 , min , max temp  181.12405620185365 1778.4950761212765 , flux balance  0.0005026427074618008
-Iteration number  1 , min , max temp  181.12298676678265 1778.4949782087544 , flux balance  2.516621876694687e-07
+Big iteration is  180.78389892559565 0
+Iteration number  0 , min , max temp  180.78376527223685 1787.159778166776 , flux balance  0.0030681703662468925
+Iteration number  1 , min , max temp  180.77876390413996 1787.1598503296318 , flux balance  4.739410364329121e-06
 In t_start: Converged Solution in iterations  1
 Profile converged
 [ 0 68 73 73 85 89]
-Iteration number  0 , min , max temp  181.1172893359973 1777.4826284013634 , flux balance  0.0003423210243741103
-Iteration number  1 , min , max temp  181.11646565305983 1777.5060025382838 , flux balance  2.109990593021752e-06
-Iteration number  2 , min , max temp  181.11645462966317 1777.5077975770066 , flux balance  2.6042319545000214e-09
+Iteration number  0 , min , max temp  180.7516421250717 1786.1317237852782 , flux balance  0.0010355980494927692
+Iteration number  1 , min , max temp  180.74961139264747 1786.1543999289381 , flux balance  2.817066883271458e-06
+Iteration number  2 , min , max temp  180.7495991105299 1786.1559904571982 , flux balance  2.7840214100805123e-09
 In t_start: Converged Solution in iterations  2
-Big iteration is  181.11645462966317 0
-Iteration number  0 , min , max temp  181.1203380257001 1777.266889104254 , flux balance  6.093980061487163e-05
-Iteration number  1 , min , max temp  181.12020897618208 1777.266923631219 , flux balance  2.018724897631825e-08
+Big iteration is  180.7495991105299 0
+Iteration number  0 , min , max temp  180.74262831572423 1785.8668785195807 , flux balance  0.0003088876555405662
+Iteration number  1 , min , max temp  180.7420453739019 1785.8667548075416 , flux balance  1.3620924783689833e-07
 In t_start: Converged Solution in iterations  1
 Profile converged
 [ 0 67 73 73 85 89]
-Iteration number  0 , min , max temp  181.11604928307057 1776.608253846009 , flux balance  -0.001610199450942297
-Iteration number  1 , min , max temp  181.11371166799506 1776.3609756368292 , flux balance  2.7396541237737195e-05
-Iteration number  2 , min , max temp  181.11366643106425 1776.362193759762 , flux balance  1.5188777634301446e-08
+Iteration number  0 , min , max temp  180.73369569456014 1785.153734295306 , flux balance  0.0023022484484821943
+Iteration number  1 , min , max temp  180.72959309898732 1784.9103346917932 , flux balance  3.0950260271342476e-05
+Iteration number  2 , min , max temp  180.729528199866 1784.9113465322898 , flux balance  1.6792597023825727e-08
 In t_start: Converged Solution in iterations  2
-Big iteration is  181.11366643106425 0
-Iteration number  0 , min , max temp  181.1200950030979 1776.1423729857372 , flux balance  1.6614409193597318e-05
-Iteration number  1 , min , max temp  181.12006166711703 1776.1428214704674 , flux balance  6.639938809628677e-09
+Big iteration is  180.729528199866 0
+Iteration number  0 , min , max temp  180.73144998076117 1784.6605341274883 , flux balance  6.0043345504229685e-05
+Iteration number  1 , min , max temp  180.73132270842532 1784.6608731072336 , flux balance  2.1726106246349695e-08
 In t_start: Converged Solution in iterations  1
 Profile converged
 [ 0 66 73 73 85 89]
-Iteration number  0 , min , max temp  181.4712985417661 1775.7605085931305 , flux balance  -0.22083846987426328
-Iteration number  1 , min , max temp  182.14528332994044 1775.0089325271003 , flux balance  0.012624797922962033
-Iteration number  2 , min , max temp  182.121199257603 1775.030779219131 , flux balance  5.402626764595716e-05
-Iteration number  3 , min , max temp  182.12109463561512 1775.0313971741762 , flux balance  2.2978373933582594e-08
+Iteration number  0 , min , max temp  181.0353721789658 1784.279961174751 , flux balance  -0.19048806274243266
+Iteration number  1 , min , max temp  181.5805667112937 1783.5865528943173 , flux balance  0.009637516285964402
+Iteration number  2 , min , max temp  181.56443362922099 1783.6055733852957 , flux balance  3.3593230189422165e-05
+Iteration number  3 , min , max temp  181.56437663187535 1783.6061300427684 , flux balance  1.2747320154413135e-08
 In t_start: Converged Solution in iterations  3
-Big iteration is  182.12109463561512 0
-Iteration number  0 , min , max temp  181.92879364315502 1774.9281752049123 , flux balance  0.016171475834483976
-Iteration number  1 , min , max temp  181.90485088222718 1774.9358045946378 , flux balance  9.579933341596581e-05
-Iteration number  2 , min , max temp  181.90470033312803 1774.935926142639 , flux balance  3.9495766784407775e-08
-In t_start: Converged Solution in iterations  2
-Profile converged
-[ 0 66 74 74 85 89]
-Iteration number  0 , min , max temp  181.85875142179637 1774.209036669141 , flux balance  -0.042331461494033704
-Iteration number  1 , min , max temp  181.75742453634174 1772.725508464363 , flux balance  0.0020934647431080063
-Iteration number  2 , min , max temp  181.75399019298516 1772.768002426075 , flux balance  4.411102224423566e-06
-Iteration number  3 , min , max temp  181.7539730139878 1772.7705346950245 , flux balance  1.6666811694082318e-09
-In t_start: Converged Solution in iterations  3
-Big iteration is  181.7539730139878 0
-Iteration number  0 , min , max temp  181.6973982584248 1772.550946220123 , flux balance  0.001231688766472749
-Iteration number  1 , min , max temp  181.69580168208194 1772.5547236661155 , flux balance  1.0332980459080347e-06
+Big iteration is  181.56437663187535 0
+Iteration number  0 , min , max temp  181.45259991313114 1783.502984655934 , flux balance  0.008547123482458745
+Iteration number  1 , min , max temp  181.44103018796406 1783.5091139138558 , flux balance  2.8812200951730744e-05
 In t_start: Converged Solution in iterations  1
 Profile converged
+[ 0 65 73 73 85 89]
+Iteration number  0 , min , max temp  181.98808773842194 1783.282146808074 , flux balance  -0.4041831410199901
+Iteration number  1 , min , max temp  183.93428475962062 1782.4231231649512 , flux balance  0.03126466705797244
+Iteration number  2 , min , max temp  183.83897795593904 1782.460828094622 , flux balance  0.00030754717533536344
+Iteration number  3 , min , max temp  183.83793105746753 1782.4629489706208 , flux balance  8.148627265835726e-07
+In t_start: Converged Solution in iterations  3
+Big iteration is  183.83793105746753 0
+Iteration number  0 , min , max temp  183.8578473703325 1782.4510416138141 , flux balance  0.014820361105234922
+Iteration number  1 , min , max temp  183.76704187321621 1782.4681956431675 , flux balance  8.896902515549786e-06
+Iteration number  2 , min , max temp  183.76698322091565 1782.4684506263557 , flux balance  1.4529885006711017e-09
+In t_start: Converged Solution in iterations  2
+Profile converged
 [ 0 65 74 74 85 89]
-Iteration number  0 , min , max temp  182.12131058404978 1772.2824196132358 , flux balance  -0.4171470497092702
-Iteration number  1 , min , max temp  184.27208716306131 1770.8810792151926 , flux balance  0.02842217765414944
-Iteration number  2 , min , max temp  184.1630490319109 1770.9297573350213 , flux balance  0.00025069227044226955
-Iteration number  3 , min , max temp  184.16195496954603 1770.9443781535392 , flux balance  7.183681519066353e-07
-Iteration number  4 , min , max temp  184.16195078991066 1770.9445760266542 , flux balance  1.7289324694043325e-09
+Iteration number  0 , min , max temp  183.7433396380874 1781.9891467906148 , flux balance  -0.08817681246758485
+Iteration number  1 , min , max temp  183.63253222352643 1780.183269359298 , flux balance  0.011889410250828356
+Iteration number  2 , min , max temp  183.6014134007643 1780.242048512409 , flux balance  6.138384775281033e-05
+Iteration number  3 , min , max temp  183.60119211430595 1780.2544609584486 , flux balance  8.829534893997376e-08
+Iteration number  4 , min , max temp  183.6011915405217 1780.254548787912 , flux balance  6.565474542604217e-11
 In t_start: Converged Solution in iterations  4
-Big iteration is  184.16195078991066 0
-Iteration number  0 , min , max temp  184.25336086443326 1771.0388361977273 , flux balance  -0.00894668446032283
-Iteration number  1 , min , max temp  184.18990907945462 1771.0907989650423 , flux balance  0.00028234376461330524
-Iteration number  2 , min , max temp  184.1889992179596 1771.0909135500574 , flux balance  7.371615883397055e-07
+Big iteration is  183.6011915405217 0
+Iteration number  0 , min , max temp  183.5571942015424 1780.1703111829042 , flux balance  0.007458575719208779
+Iteration number  1 , min , max temp  183.53870055784432 1780.1864762798828 , flux balance  2.4016199644892542e-05
+Iteration number  2 , min , max temp  183.538631202583 1780.1867823505386 , flux balance  1.8924155980545822e-08
 In t_start: Converged Solution in iterations  2
 Profile converged
 [ 0 65 75 75 85 89]
-Iteration number  0 , min , max temp  184.17734291948886 1770.53033974846 , flux balance  -0.08236139303226747
-Iteration number  1 , min , max temp  184.1031173911052 1767.7314401556948 , flux balance  0.0098266795140452
-Iteration number  2 , min , max temp  184.07079114000118 1767.7829217844499 , flux balance  8.477205749034356e-05
-In t_start: Converged Solution in iterations  2
-Big iteration is  184.07079114000118 0
-Iteration number  0 , min , max temp  184.0558117312399 1767.7028197187487 , flux balance  0.005845499922812541
-Iteration number  1 , min , max temp  184.0372661404797 1767.7189749341892 , flux balance  1.7390391617238927e-05
-In t_start: Converged Solution in iterations  1
+Iteration number  0 , min , max temp  183.52339667187505 1779.4703814973884 , flux balance  -0.025414673619776854
+In t_start: Converged Solution in iterations  0
+Big iteration is  183.52339667187505 0
+Iteration number  0 , min , max temp  183.49826376432182 1778.5402827672242 , flux balance  -0.018748365368785654
+In t_start: Converged Solution in iterations  0
 Profile converged
 [ 0 65 76 76 85 89]
-Iteration number  0 , min , max temp  184.03065952081477 1766.8813115371509 , flux balance  -0.025434036499614683
+Iteration number  0 , min , max temp  183.4868021527945 1777.3492256707036 , flux balance  -0.011996365214088601
 In t_start: Converged Solution in iterations  0
-Big iteration is  184.03065952081477 0
-Iteration number  0 , min , max temp  184.01918212149448 1765.7614775490615 , flux balance  -0.020951768862406062
+Big iteration is  183.4868021527945 0
+Iteration number  0 , min , max temp  183.46838213622192 1775.7047480878434 , flux balance  -0.01062949023584438
 In t_start: Converged Solution in iterations  0
 Profile converged
 [ 0 65 77 77 85 89]
-Iteration number  0 , min , max temp  184.01225035811714 1764.2720618998503 , flux balance  -0.011446250175209375
+Iteration number  0 , min , max temp  183.4598969895287 1773.9132353991183 , flux balance  -0.0019143876091928444
 In t_start: Converged Solution in iterations  0
-Big iteration is  184.01225035811714 0
-Iteration number  0 , min , max temp  184.00036444118408 1762.2015163281246 , flux balance  -0.011465206261679918
-In t_start: Converged Solution in iterations  0
-Profile converged
-[ 0 65 78 78 85 89]
-Iteration number  0 , min , max temp  183.99385869366148 1760.0127703988173 , flux balance  -0.0036477342350633895
-In t_start: Converged Solution in iterations  0
-Big iteration is  183.99385869366148 0
-Iteration number  0 , min , max temp  183.98293130513193 1756.9489896357131 , flux balance  -0.0063763144944666275
+Big iteration is  183.4598969895287 0
+Iteration number  0 , min , max temp  183.44604261550134 1771.4134695417033 , flux balance  -0.003750904733930475
 In t_start: Converged Solution in iterations  0
 Profile converged
-[ 0 65 79 79 85 89]
-Iteration number  0 , min , max temp  183.9771249952936 1753.8453694742477 , flux balance  -0.0030501891605851238
+[ 0 64 77 77 85 89]
+Iteration number  0 , min , max temp  183.53287411006443 1770.5180385511326 , flux balance  -0.18859955147406943
 In t_start: Converged Solution in iterations  0
-Big iteration is  183.9771249952936 0
-Iteration number  0 , min , max temp  183.9678928313658 1749.4286395046076 , flux balance  -0.006550184125957274
+Big iteration is  183.53287411006443 0
+Iteration number  0 , min , max temp  183.65507784305572 1769.3363694950124 , flux balance  -0.16714985581920583
+In t_start: Converged Solution in iterations  0
+Profile converged
+[ 0 64 78 78 85 89]
+Iteration number  0 , min , max temp  183.7148685328165 1767.9297013685311 , flux balance  -0.14502761957227073
+In t_start: Converged Solution in iterations  0
+Big iteration is  183.7148685328165 0
+Iteration number  0 , min , max temp  183.79688552097284 1766.0582798217429 , flux balance  -0.1335417587349026
 In t_start: Converged Solution in iterations  0
 Profile converged
 [ 0 64 79 79 85 89]
-Iteration number  0 , min , max temp  184.02372806706254 1747.9275655738709 , flux balance  -0.1412942445631901
+Iteration number  0 , min , max temp  183.8407299080831 1764.0524880974597 , flux balance  -0.1189537600769683
 In t_start: Converged Solution in iterations  0
-Big iteration is  184.02372806706254 0
-Iteration number  0 , min , max temp  184.10219320474874 1745.9234150932577 , flux balance  -0.1325425381612385
+Big iteration is  183.8407299080831 0
+Iteration number  0 , min , max temp  183.90163503828205 1761.3103389562498 , flux balance  -0.11338790355944683
 In t_start: Converged Solution in iterations  0
 Profile converged
 [ 0 64 80 80 85 89]
-Iteration number  0 , min , max temp  184.146317860856 1743.5599194992662 , flux balance  -0.12335930014076892
+Iteration number  0 , min , max temp  183.93539544137067 1758.535306215984 , flux balance  -0.1079743031955036
 In t_start: Converged Solution in iterations  0
-Big iteration is  184.146317860856 0
-Iteration number  0 , min , max temp  184.20802254139767 1740.3499151875772 , flux balance  -0.11836013447133814
+Big iteration is  183.93539544137067 0
+Iteration number  0 , min , max temp  183.98249621454255 1754.7046679494513 , flux balance  -0.10465557328741576
 In t_start: Converged Solution in iterations  0
 Profile converged
 [ 0 64 81 81 85 89]
-Iteration number  0 , min , max temp  184.24364025250802 1736.935671343897 , flux balance  -0.11622301508368663
+Iteration number  0 , min , max temp  184.0094484275001 1750.8802871185212 , flux balance  -0.10306744853905046
 In t_start: Converged Solution in iterations  0
-Big iteration is  184.24364025250802 0
-Iteration number  0 , min , max temp  184.29421422419324 1732.2007263124 , flux balance  -0.1100419867092159
+Big iteration is  184.0094484275001 0
+Iteration number  0 , min , max temp  184.0478371895572 1745.507014744527 , flux balance  -0.09725041712404527
 In t_start: Converged Solution in iterations  0
 Profile converged
 [ 0 64 82 82 85 89]
-Iteration number  0 , min , max temp  184.32421912833868 1727.2606017439152 , flux balance  -0.10793134395503452
+Iteration number  0 , min , max temp  184.0703438572884 1740.1483386929547 , flux balance  -0.09516275203935533
 In t_start: Converged Solution in iterations  0
-Big iteration is  184.32421912833868 0
-Iteration number  0 , min , max temp  184.367441867248 1720.2666160054885 , flux balance  -0.10027868422857136
+Big iteration is  184.0703438572884 0
+Iteration number  0 , min , max temp  184.10302200464713 1732.4487080904057 , flux balance  -0.08789770987005385
 In t_start: Converged Solution in iterations  0
 Profile converged
 [ 0 64 83 83 85 89]
-Iteration number  0 , min , max temp  184.39389314121252 1712.9777201849297 , flux balance  -0.09752908670490662
+Iteration number  0 , min , max temp  184.12275810349223 1724.6452546584683 , flux balance  -0.08541560448152039
 In t_start: Converged Solution in iterations  0
-Big iteration is  184.39389314121252 0
-Iteration number  0 , min , max temp  184.43296803714318 1702.3227080757342 , flux balance  -0.08987624125966322
+Big iteration is  184.12275810349223 0
+Iteration number  0 , min , max temp  184.15220016558635 1713.0364980328775 , flux balance  -0.07821444999462293
 In t_start: Converged Solution in iterations  0
 Profile converged
 [ 0 64 84 84 85 89]
-Iteration number  0 , min , max temp  184.45742097560867 1179.6599089570473 , flux balance  -0.087133838922497
+Iteration number  0 , min , max temp  184.17034210818426 1199.5029662206543 , flux balance  -0.07580054514806561
 In t_start: Converged Solution in iterations  0
-Big iteration is  184.45742097560867 0
-Iteration number  0 , min , max temp  184.49484451464386 1252.9506511379484 , flux balance  -0.07950439228972754
+Big iteration is  184.17034210818426 0
+Iteration number  0 , min , max temp  184.19837282349712 1272.7402270019134 , flux balance  -0.06859531023380312
 In t_start: Converged Solution in iterations  0
 Profile converged
 [ 0 64 89  0 85 89]
-Iteration number  0 , min , max temp  184.74491353794653 1123.081976527934 , flux balance  0.0015993225194780411
-Iteration number  1 , min , max temp  184.74007584876526 1122.8342764136175 , flux balance  8.30110285505264e-06
+Iteration number  0 , min , max temp  184.40417695995964 1142.2206685055107 , flux balance  0.0013942186411638221
+Iteration number  1 , min , max temp  184.3998146245758 1141.9977073293642 , flux balance  6.409925691419605e-06
 In t_start: Converged Solution in iterations  1
-Big iteration is  184.74007584876526 0
-Iteration number  0 , min , max temp  184.79090329557727 1130.2802824838586 , flux balance  0.00032234949621516654
-Iteration number  1 , min , max temp  184.79007199105732 1130.2220209557115 , flux balance  1.6871922624824494e-06
+Big iteration is  184.3998146245758 0
+Iteration number  0 , min , max temp  184.44011790027508 1149.7163652394918 , flux balance  0.0003689122095546786
+Iteration number  1 , min , max temp  184.43905992114088 1149.6501682579824 , flux balance  1.6632816870436544e-06
 In t_start: Converged Solution in iterations  1
 Profile converged
 [ 0 63 89  0 85 89]
-Iteration number  0 , min , max temp  184.87073049682573 1094.7077085657008 , flux balance  0.0009440024846297387
-Iteration number  1 , min , max temp  184.86881635852455 1094.5570129107268 , flux balance  8.038203105866637e-06
+Iteration number  0 , min , max temp  184.53624923790468 1104.350217331553 , flux balance  0.001250513999570923
+Iteration number  1 , min , max temp  184.53323640468224 1104.15240353262 , flux balance  9.666644488954326e-06
 In t_start: Converged Solution in iterations  1
-Big iteration is  184.86881635852455 0
-Iteration number  0 , min , max temp  184.9467808791965 1098.72602172478 , flux balance  -1.1486457369061564e-05
+Big iteration is  184.53323640468224 0
+Iteration number  0 , min , max temp  184.62149505020176 1108.9551833634077 , flux balance  2.823784000488747e-05
 In t_start: Converged Solution in iterations  0
 Profile converged
 [ 0 62 89  0 85 89]
-Iteration number  0 , min , max temp  184.9833118699647 1098.6433217221988 , flux balance  -7.812699993440626e-05
+Iteration number  0 , min , max temp  184.6673146443511 1105.1915947704688 , flux balance  -9.400991764990805e-05
 In t_start: Converged Solution in iterations  0
-Big iteration is  184.9833118699647 0
-Iteration number  0 , min , max temp  184.99415096745392 1099.1207134768424 , flux balance  -3.0403368444481877e-05
+Big iteration is  184.6673146443511 0
+Iteration number  0 , min , max temp  184.692167408762 1106.1948378842476 , flux balance  -5.36377558922955e-05
 In t_start: Converged Solution in iterations  0
 Profile converged
 Grow Phase : Upper Zone
 final [ 0 62 89  0 85 89]
-Iteration number  0 , min , max temp  184.99744612393138 1099.2711611181983 , flux balance  -1.0155014006668277e-05
+Iteration number  0 , min , max temp  184.69951858915493 1106.5144012094595 , flux balance  -1.9496506589522475e-05
 In t_start: Converged Solution in iterations  0
-Big iteration is  184.99744612393138 0
-Iteration number  0 , min , max temp  184.9985410718556 1099.3187155875296 , flux balance  -3.267349813188859e-06
+Big iteration is  184.69951858915493 0
+Iteration number  0 , min , max temp  184.70168060775572 1106.6160987034505 , flux balance  -6.454931231079873e-06
 In t_start: Converged Solution in iterations  0
 Profile converged
 YAY ! ENDING WITH CONVERGENCE

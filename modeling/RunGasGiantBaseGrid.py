@@ -1,6 +1,6 @@
 import numpy as np
-#from tools.tools import *
-from tools.reflectx import *
+#from tools.reflectx import *
+from myastrotools.reflectx import *
 import astropy.units as u
 import pandas as pd
 
@@ -39,9 +39,9 @@ def Run1Model(p, num_tangle = 6, num_gangle = 6):
 
     Teq_str = np.round(Teq, decimals=0)
     directory = f'{grid}-{planettype}-Tstar{int(T_star)}-Rstar{r_star}-Teq{int(Teq_str)}-sep{semi_major}-rad{radius}-mass{massj}-mh{int(planet_mh)}-co{planet_mh_CtoO}-phase{int(phase)}'
-    savefiledirectory = p['output_dir']+directory
-    #output_dir = ''
-    #savefiledirectory = output_dir+directory
+    #savefiledirectory = p['output_dir']+directory
+    output_dir = ''
+    savefiledirectory = output_dir+directory
 
     # Skip ones already completed:
     try:
@@ -52,7 +52,6 @@ def Run1Model(p, num_tangle = 6, num_gangle = 6):
                 return
     except:
         pass
-
 
     import os
     # Make directory to store run results:
@@ -66,8 +65,8 @@ def Run1Model(p, num_tangle = 6, num_gangle = 6):
     k.close()
 
 
-    #local_ck_path = f'/Volumes/Oy/picaso/reference/kcoeff_2020/'
-    local_ck_path = p['local_ck_path']
+    local_ck_path = f'/Volumes/Oy/picaso/reference/kcoeff_2020/'
+    #local_ck_path = p['local_ck_path']
 
     planet_properties = {
         'tint':Tint, 'Teq':Teq, 'radius':radius, 'radius_unit':u.Rjup,
@@ -88,9 +87,9 @@ def Run1Model(p, num_tangle = 6, num_gangle = 6):
             'nlevel':nlevel, 'nofczns':nofczns, 'nstr_upper':nstr_upper,
             'nstr_deep':nstr_deep, 'rfacv':rfacv
     }
-    opa_file = p['opa_file']
-    #opa_file = None
-    #R = 150
+    #opa_file = p['opa_file']
+    opa_file = None
+    R = 150
     R = p['R']
     wave_range = [float(p['wave_range'].split(',')[0].replace('[','')),
             float(p['wave_range'].split(',')[1].replace(' ','').replace(']',''))]
@@ -110,7 +109,7 @@ def Run1Model(p, num_tangle = 6, num_gangle = 6):
     k.close()
 
     try:
-        cj = MakeModelCloudFreePlanet(planet_properties, 
+        pl, noclouds, recommended = MakeModelCloudFreePlanet(planet_properties, 
                                 star_properties,
                                 cdict = climate_run_setup,
                                 use_guillotpt = use_guillotpt,
@@ -134,6 +133,10 @@ def Run1Model(p, num_tangle = 6, num_gangle = 6):
             else:
                 k.write(savefiledirectory + ' ' +outtime + '  FAILED  failed to converge \n')
             k.close()
+
+        GenerateInitialReadMe(savefiledirectory,planettype,T_star,r_star,Teq_str,semi_major,radius,massj,
+                   planet_mh,planet_mh_CtoO,phase,planet_properties,
+                   star_properties,climate_run_setup,spectrum_setup,recommended)
 
     except Exception as e:
         k = open('ReflectXGasGiantRunReport.txt','a')
@@ -169,9 +172,10 @@ def RunGrid(sheet_id='11u2eirdZcWZdjnKFn3vzqbCtKCodstP-KnoGXC5FdR8',
     k.close()
     p = GetP(sheet_id=sheet_id, 
              sheet_name=sheet_name)
-    #p = p.loc[:0]
+    p = p.loc[:0]
     import picaso.justdoit as jdi
     jdi.Parallel(n_jobs=n_jobs)(jdi.delayed(Run1Model)(p.loc[i]) for i in range(len(p)))
+    #Run1Model(p)
         
     #return p
 

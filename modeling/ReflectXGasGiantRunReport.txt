@@ -1,0 +1,2 @@
+ReflectXGasGiantModelGrid-Neptune-Tstar3000-Rstar0.2-Teq187-sep0.1-rad0.35-mass0.05-mh100-co0.5-phase0 2023-8-17-15:55:59  converged  no error 
+ReflectXGasGiantModelGrid-Neptune-Tstar3000-Rstar0.2-Teq187-sep0.1-rad0.35-mass0.05-mh100-co0.5-phase0 2023-8-17-17:14:29  converged  no error 
