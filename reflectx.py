@@ -130,6 +130,40 @@ def GetPlanetFlux(PlanetWNO,PlanetFPFS,StarWNO,StarFlux):
     ResampledStarFlux = func(PlanetWNO)
     return ResampledStarFlux*PlanetFPFS
 
+def MakeAbundancesPlot(atm_df, n_mols_to_plot = 8):
+    sort = np.argsort(atm_df.loc[0])[::-1]
+    highest_abundance = np.array(atm_df.keys()[sort])
+    highest_abundance = np.delete(highest_abundance,np.where(highest_abundance=='temperature'))
+    highest_abundance = np.delete(highest_abundance,np.where(highest_abundance=='pressure'))
+    highest_abundance = np.delete(highest_abundance,np.where(highest_abundance=='e-'))
+    import matplotlib
+    cmap = matplotlib.cm.get_cmap('Spectral')
+    mols = highest_abundance[:n_mols_to_plot+1]
+    linestyles = ['-','-.']*len(mols)
+    lineweights = [4,4,2,2]*len(mols)
+    n = len(mols)
+    cs = np.linspace(0.1,1,n)
+    colors = cmap(cs)
+    fig = plt.figure(figsize=(10,10))
+    plt.minorticks_on()
+    plt.tick_params(axis='both',which='major',length =30, width=2,direction='in',labelsize=23)
+    plt.tick_params(axis='both',which='minor',length =10, width=2,direction='in',labelsize=23)
+
+    plt.ylabel("Pressure [Bars]", fontsize=25)
+    plt.xlabel('Abundance', fontsize=25)
+    plt.ylim(500,1e-4)
+    plt.xlim(left=1e-6)
+
+    for i,mol in enumerate(mols):
+        plt.plot(atm_df[mol],
+                atm_df['pressure'],
+                color=colors[i],linewidth=lineweights[i],label=mol,ls=linestyles[i])
+    plt.gca().set_yscale('log')
+    plt.gca().set_xscale('log')
+    #plt.gca().invert_yaxis()
+    plt.legend(fontsize=20)
+    return fig
+
 def Make4SpectrumPlot(PlanetWNO,PlanetAlbedo,PlanetFPFS,StarWNO,StarFlux,colormap = 'magma',
                       plotstyle='magrathea'):
     import matplotlib
@@ -193,11 +227,14 @@ def ComputeSpectrum(atm_df, pdict, sdict, specdict, calculation = 'planet',
                    plotstyle = 'magrathea'):
     
     import picaso.justdoit as jdi
-    opacity_db = specdict['opacity_db']
-    if opacity_db == None:
-        opa_mon = jdi.opannection(wave_range=specdict['wave_range'])
+    if specdict == None:
+        opa_mon = jdi.opannection()
     else:
-        opa_mon = jdi.opannection(filename_db = opacity_db, wave_range=specdict['wave_range'])
+        opacity_db = specdict['opacity_db']
+        if opacity_db == None:
+            opa_mon = jdi.opannection(wave_range=specdict['wave_range'])
+        else:
+            opa_mon = jdi.opannection(filename_db = opacity_db, wave_range=specdict['wave_range'])
     spec = jdi.inputs(calculation=calculation)
 
     spec.phase_angle(phase=pdict['phase']*np.pi/180, num_tangle=pdict['num_tangle'],
@@ -289,39 +326,9 @@ def ComputeSpectrum(atm_df, pdict, sdict, specdict, calculation = 'planet',
         save(mrp)
 
     if AbundancesPlot:
-        sort = np.argsort(atm_df.loc[0])[::-1]
-        highest_abundance = np.array(atm_df.keys()[sort])
-        highest_abundance = np.delete(highest_abundance,np.where(highest_abundance=='temperature'))
-        highest_abundance = np.delete(highest_abundance,np.where(highest_abundance=='pressure'))
-        highest_abundance = np.delete(highest_abundance,np.where(highest_abundance=='e-'))
-        import matplotlib
-        cmap = matplotlib.cm.get_cmap('Spectral')
-        mols = highest_abundance[:n_mols_to_plot+1]
-        linestyles = ['-','-.']*len(mols)
-        lineweights = [4,4,2,2]*len(mols)
-        n = len(mols)
-        cs = np.linspace(0.1,1,n)
-        colors = cmap(cs)
-        plt.figure(figsize=(10,10))
-        plt.minorticks_on()
-        plt.tick_params(axis='both',which='major',length =30, width=2,direction='in',labelsize=23)
-        plt.tick_params(axis='both',which='minor',length =10, width=2,direction='in',labelsize=23)
-
-        plt.ylabel("Pressure [Bars]", fontsize=25)
-        plt.xlabel('Abundance', fontsize=25)
-        plt.ylim(500,1e-4)
-        plt.xlim(left=1e-6)
-
-        for i,mol in enumerate(mols):
-            plt.plot(atm_df[mol],
-                    atm_df['pressure'],
-                    color=colors[i],linewidth=lineweights[i],label=mol,ls=linestyles[i])
-        plt.gca().set_yscale('log')
-        plt.gca().set_xscale('log')
-        #plt.gca().invert_yaxis()
-        plt.legend(fontsize=20)
-        plt.savefig(savefiledirectory+'-abundances.png',
-                    bbox_inches='tight')
+        fig = MakeAbundancesPlot(atm_df, n_mols_to_plot = n_mols_to_plot)
+        fig.savefig(savefiledirectory+'-abundances.png',
+                bbox_inches='tight')
         
     if PTplot:
         fig = MakePTProflePlot(atm_df)
@@ -507,7 +514,10 @@ def MakeModelCloudFreePlanet(pdict, sdict,
         ck_db_name = pdict['local_ck_path'] + f'sonora_2020_feh{PlanetMHStr}_co_{PlanetCO}.data.196'
     print(ck_db_name)
     # Set opacity connection:
-    opacity_ck = jdi.opannection(ck_db=ck_db_name, wave_range = specdict['wave_range'])
+    if specdict == None:
+        opacity_ck = jdi.opannection(ck_db=ck_db_name)
+    else:
+        opacity_ck = jdi.opannection(ck_db=ck_db_name, wave_range = specdict['wave_range'])
     
     # initialize model:
     pl = jdi.inputs(calculation= calculation, climate = True)
@@ -628,18 +638,24 @@ def MakeModelCloudFreePlanet(pdict, sdict,
         outdf.to_csv(savefiledirectory+'/cloud-free-spectrum-R'+str(specdict['R'])+'.csv', index=False, sep=' ')
 
     else:
-        wno, alb, fpfs, full_output = ComputeSpectrum(noclouds['ptchem_df'], 
-                                                                  pdict, sdict, specdict, 
-                                                                  calculation = 'planet',
-                                                                  saveplots = True, 
-                                                                  clouddict = None,
-                                                                  savefiledirectory = savefiledirectory+'/cloud-free', 
-                                                                  ComputePlanetFlux = False, 
-                                                                  make4spectrumplot = False,
-                                                                  AbundancesPlot = True, 
-                                                                  MixingRatioPlot = False,
-                                                                  PTplot = True
-                                                                  )
+        # wno, alb, fpfs, full_output = ComputeSpectrum(noclouds['ptchem_df'], 
+        #                                                           pdict, sdict, specdict, 
+        #                                                           calculation = 'planet',
+        #                                                           saveplots = False, 
+        #                                                           clouddict = None,
+        #                                                           savefiledirectory = savefiledirectory+'/cloud-free', 
+        #                                                           ComputePlanetFlux = False, 
+        #                                                           make4spectrumplot = False,
+        #                                                           AbundancesPlot = True, 
+        #                                                           MixingRatioPlot = False,
+        #                                                           PTplot = True
+        #                                                           )
+        fig1 = MakePTProflePlot(noclouds['ptchem_df'])
+        fig1.savefig(savefiledirectory+'/cloudfree-PTprofile.png',
+                    bbox_inches='tight')
+        fig2 = MakeAbundancesPlot(noclouds['ptchem_df'], n_mols_to_plot = 8)
+        fig2.savefig(savefiledirectory+'/cloudfree-abundances.png',
+                bbox_inches='tight')
         noclouds['ptchem_df'].to_csv(savefiledirectory+'/cloud-free-atm-df.csv', index=False)
     if record_terminal_output:
         f.close()
